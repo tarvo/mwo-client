@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-import Home from "./routes/home";
-import Monitoring from "./routes/monitoring";
+import Dashboard from "./components/dashboard/Dashboard";
+import Navbar from "./components/navbar/Navbar";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="home" element={<Home />} />
-        <Route path="monitoring" element={<Monitoring />} />
+        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="dashboard" element={<Dashboard />} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
