@@ -31,22 +31,18 @@ export default function Navbar() {
   });
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-    console.log('handleMenu()');
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    console.log('handleClose()');
   };
 
   const toggleDrawer = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-    console.log('toggleDrawer()');
     if (event.type === 'keydown' &&
       ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
     ) {
       return;
     }
-
     setState({...state, [anchor]: open});
   };
 
@@ -92,8 +88,9 @@ export default function Navbar() {
               color="inherit"
               aria-label="menu"
               sx={{mr: 2}}
+              onClick={toggleDrawer('left', true)}
             >
-              <MenuIcon onClick={toggleDrawer('left', true)}/>
+              <MenuIcon/>
             </IconButton>
             <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
               WORK
@@ -113,15 +110,9 @@ export default function Navbar() {
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
+                anchorOrigin={{vertical: 'top', horizontal: 'right',}}
                 keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
+                transformOrigin={{vertical: 'top', horizontal: 'right',}}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
