@@ -40,3 +40,8 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.element-list-container {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
